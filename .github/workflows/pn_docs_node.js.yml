@@ -3,7 +3,7 @@ name: Deploy Next.js site to Pages
 on:
   push:
     branches: ["release/github-pages"]
-  pull-request:
+  pull_request:
     branches: ["release/github-pages"]
   workflow_dispatch:
 
