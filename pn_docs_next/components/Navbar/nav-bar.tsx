@@ -27,10 +27,10 @@ const Navbar: React.FC = () => {
   };
 
   const navLinks: NavLink[] = [
-    { label: "Research", href: "#" },
-    { label: "Paradigms", href: "#" },
-    { label: "Factory", href: "#" },
-    { label: "Products", href: "#" },
+    { label: "Research", href: "ResearchPage" },
+    { label: "Paradigms", href: "ParadigmsPage" },
+    { label: "Factory", href: "FactoryPage" },
+    { label: "Products", href: "ProductsPage" },
     // Add more links here
   ];
 
@@ -69,21 +69,14 @@ const Navbar: React.FC = () => {
                 <Image src="/assets/logos/closemenu.svg" alt="Close Menu" width={24} height={24} />
               </button>
             </div>
-            <div className="p-4">
-              <NavList links={navLinks} />
-              {/* Additional links can be added here */}
-              <Link href="Portal/">
-                <button className="bg-transparent border-2 border-primary text-base-color px-4 py-1 rounded-md font-bold cursor-pointer mt-2">Portal</button>
-              </Link>
-            </div>
           </div>
         )}
       </div>
 
       {/* Right side - Login button - Visible on large screens */}
       <div className="hidden lg:flex items-center">
-        <Link href="/Portal">
-          <button className="bg-transparent border-2 border-primary text-primary px-4 py-1 rounded-md font-medium cursor-pointer">Portal</button>
+        <Link href="#">
+          <button className="bg-transparent border-2 border-primary text-primary px-4 py-1 rounded-md font-medium cursor-pointer">...!</button>
         </Link>
       </div>
     </div>
