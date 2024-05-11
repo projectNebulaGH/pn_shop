@@ -48,7 +48,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: github-pages
+          name: nextjs-build
           path: pn_docs_next/.next
 
   deploy:
