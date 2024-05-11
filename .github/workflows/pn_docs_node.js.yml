@@ -45,24 +45,10 @@ jobs:
             exit 1
           fi
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "14"
-          cache: ${{ steps.detect-package-manager.outputs.manager }}
-          cache-dependency-path: pn_docs_next
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-        with:
-          static_site_generator: next
-
-      - name: Restore cache
-        uses: actions/cache@v2
-        with:
-          path: pn_docs_next/.next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('pn_docs_next/**/package-lock.json', 'pn_docs_next/**/yarn.lock') }}
-          restore-keys: ${{ runner.os }}-nextjs-
 
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
@@ -74,7 +60,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: nextjs-site
-          path: pn_docs_next/out
+          path: pn_docs_next/.next
 
   deploy:
     environment:
@@ -87,7 +73,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: nextjs-site
-          path: pn_docs_next/out
+          path: pn_docs_next/.next
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
