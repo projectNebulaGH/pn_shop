@@ -30,6 +30,8 @@ jobs:
       - name: Detect package manager
         id: detect-package-manager
         run: |
+          echo "Workspace: ${{ github.workspace }}"
+          ls -al ${{ github.workspace }}/pn_docs_next
           if [ -f "${{ github.workspace }}/pn_docs_next/yarn.lock" ]; then
             echo "manager=yarn" >> $GITHUB_ENV
             echo "command=install" >> $GITHUB_ENV
@@ -48,7 +50,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "14"
+          node-version: "18"
 
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
@@ -60,7 +62,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: nextjs-site
-          path: pn_docs_next/.next
+          path: .next
 
   deploy:
     environment:
