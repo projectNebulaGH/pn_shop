@@ -26,8 +26,9 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
-run:
-  working_directory: "pn_docs_next"
+defaults:
+  run:
+    working_directory: "pn_docs_next"
 
 jobs:
   # Build job
@@ -56,7 +57,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "18"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Setup Pages
         uses: actions/configure-pages@v5
