@@ -27,10 +27,8 @@ jobs:
         id: detect-package-manager
         run: |
           echo "Workspace: ${{ github.workspace }}"
-          ls -a
-          cd ..
-          ls -a
           cd pn_docs_next
+          ls -a
 
           if [ -f "yarn.lock" ]; then
             echo "manager=yarn" >> $GITHUB_ENV
