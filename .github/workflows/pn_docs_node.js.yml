@@ -51,8 +51,7 @@ jobs:
 
       - name: Build and start with Next.js
         run: |
-          yarn build 
-          yarn start
+          yarn run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
