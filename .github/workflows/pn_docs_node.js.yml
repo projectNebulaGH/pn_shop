@@ -54,7 +54,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: "https://projectnebulagh.github.io/pn_shop/"
+      url: "https://projectnebulagh.github.io/pn_shop/pn_docs_next"
     runs-on: ubuntu-latest
     needs: build
     steps:
