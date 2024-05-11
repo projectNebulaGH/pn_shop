@@ -18,7 +18,7 @@ concurrency:
 
 defaults:
   run:
-    working-directory: pn_docs_next
+    working-directory: ./pn_docs_next
 
 jobs:
   build:
@@ -32,7 +32,7 @@ jobs:
         run: |
           echo "Workspace: ${{ github.workspace }}"
           cd ..
-          ls -a
+          cd pn_docs_next
 
           ls -al ${{ github.workspace }}/pn_docs_next
           if [ -f "${{ github.workspace }}/pn_docs_next/yarn.lock" ]; then
