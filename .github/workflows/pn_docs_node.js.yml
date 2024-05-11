@@ -53,7 +53,7 @@ jobs:
 
   deploy:
     environment:
-      name: github-pages
+      name: nextjs-build
       url: "https://projectnebulagh.github.io/pn_shop"
     runs-on: ubuntu-latest
     needs: build
@@ -62,5 +62,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          folder: pn_docs_next/.next
+        
