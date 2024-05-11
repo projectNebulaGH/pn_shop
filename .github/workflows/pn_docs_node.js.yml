@@ -48,12 +48,12 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: nextjs-build
+          name: github-pages
           path: pn_docs_next/.next
 
   deploy:
     environment:
-      name: nextjs-build
+      name: github-pages
       url: "https://projectnebulagh.github.io/pn_shop"
     runs-on: ubuntu-latest
     needs: build
