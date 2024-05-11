@@ -28,7 +28,7 @@ concurrency:
 
 defaults:
   run:
-    working_directory: "pn_docs_next"
+    working-directory: pn_docs_next
 
 jobs:
   # Build job
