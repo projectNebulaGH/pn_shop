@@ -5,7 +5,7 @@ const HomePage = () => {
   return (
     <>
       <Head>
-        <title>{"pn shop"}</title>
+        <title>{"pn docs"}</title>
       </Head>
       <div>
         <HomeLandingSection />
