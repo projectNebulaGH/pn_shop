@@ -51,6 +51,7 @@ jobs:
 
       - name: Build and start with Next.js
         run: |
+          yarn build
           yarn start
 
       - name: Upload artifact
