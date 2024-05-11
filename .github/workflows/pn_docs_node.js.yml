@@ -29,8 +29,8 @@ jobs:
           echo "Workspace: ${{ github.workspace }}"
           cd ..
           ls -a
-          cd /pn_docs_next
-          
+          cd pn_docs_next
+
           if [ -f "yarn.lock" ]; then
             echo "manager=yarn" >> $GITHUB_ENV
             echo "command=install" >> $GITHUB_ENV
