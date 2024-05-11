@@ -29,19 +29,9 @@ jobs:
           echo "Workspace: ${{ github.workspace }}"
           cd pn_docs_next
           ls -a
-
-          if [ -f "yarn.lock" ]; then
-            echo "manager=yarn" >> $GITHUB_ENV
-            echo "command=install" >> $GITHUB_ENV
-            echo "runner=yarn" >> $GITHUB_ENV
-          elif [ -f "package.json" ]; then
-            echo "manager=npm" >> $GITHUB_ENV
-            echo "command=ci" >> $GITHUB_ENV
-            echo "runner=npx --no-install" >> $GITHUB_ENV
-          else
-            echo "Unable to determine package manager"
-            exit 1
-          fi
+          echo "manager=yarn" >> $GITHUB_ENV
+          echo "command=install" >> $GITHUB_ENV
+          echo "runner=yarn" >> $GITHUB_ENV
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
