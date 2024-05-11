@@ -63,10 +63,12 @@ jobs:
         run: |
          cd pn_docs_next
          yarn install
-
-      - name: |
-         cd pn_docs_next
-         yarn build
+         
+      - name: Build with Next.js
+        run: |
+          cd pn_docs_next
+          next build
+        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
