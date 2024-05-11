@@ -26,6 +26,10 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+defaults:
+  run:
+    working-directory: pn_docs_next
+
 jobs:
   # Build job
   build:
@@ -68,7 +72,7 @@ jobs:
       - name: Build with Next.js
         run: |
           cd pn_docs_next
-          next build
+          yarn build
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
