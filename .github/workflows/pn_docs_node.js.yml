@@ -1,10 +1,20 @@
-name: Node.js CI with Yarn
+name: Deploy Next.js site to Pages
 
 on:
   push:
-    branches: [ "develop" ]
-  pull_request:
-    branches: [ "develop" ]
+    branches: ["release/github-pages"]
+  pull-request:
+    branches: ["release/github-pages"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 defaults:
   run:
@@ -12,25 +22,67 @@ defaults:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [18.x]
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'yarn'
-        cache-dependency-path: pn_docs_next
+      - name: Detect package manager
+        id: detect-package-manager
+        run: |
+          if [ -f "${{ github.workspace }}/pn_docs_next/yarn.lock" ]; then
+            echo "manager=yarn" >> $GITHUB_OUTPUT
+            echo "command=install" >> $GITHUB_OUTPUT
+            echo "runner=yarn" >> $GITHUB_OUTPUT
+            exit 0
+          elif [ -f "${{ github.workspace }}/pn_docs_next/package.json" ]; then
+            echo "manager=npm" >> $GITHUB_OUTPUT
+            echo "command=ci" >> $GITHUB_OUTPUT
+            echo "runner=npx --no-install" >> $GITHUB_OUTPUT
+            exit 0
+          else
+            echo "Unable to determine package manager"
+            exit 1
+          fi
 
-    
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "14"
+          cache: ${{ steps.detect-package-manager.outputs.manager }}
+          cache-dependency-path: pn_docs_next
 
-      
-        
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        with:
+          static_site_generator: next
+
+      - name: Restore cache
+        uses: actions/cache@v4
+        with:
+          path: .next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('pn_docs_next/**/package-lock.json', 'pn_docs_next/**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-nextjs-
+
+      - name: Install dependencies
+        run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+
+      - name: Build with Next.js
+        run: ${{ steps.detect-package-manager.outputs.runner }} next build
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: nextjs-site
+          path: pn_docs_next/out
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
