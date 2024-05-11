@@ -16,10 +16,6 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
-defaults:
-  run:
-    working-directory: pn_docs_next
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -31,21 +27,16 @@ jobs:
         id: detect-package-manager
         run: |
           echo "Workspace: ${{ github.workspace }}"
-          ls -a
-          cd ..
           cd pn_docs_next
           ls -a
-          ls -al ${{ github.workspace }}/pn_docs_next
-          if [ -f "${{ github.workspace }}/pn_docs_next/yarn.lock" ]; then
+          if [ -f "yarn.lock" ]; then
             echo "manager=yarn" >> $GITHUB_ENV
             echo "command=install" >> $GITHUB_ENV
             echo "runner=yarn" >> $GITHUB_ENV
-            exit 0
-          elif [ -f "${{ github.workspace }}/pn_docs_next/package.json" ]; then
+          elif [ -f "package.json" ]; then
             echo "manager=npm" >> $GITHUB_ENV
             echo "command=ci" >> $GITHUB_ENV
             echo "runner=npx --no-install" >> $GITHUB_ENV
-            exit 0
           else
             echo "Unable to determine package manager"
             exit 1
@@ -54,7 +45,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "18"
+          node-version: "14"
 
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
@@ -66,7 +57,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: nextjs-site
-          path: .next
+          path: pn_docs_next/.next
 
   deploy:
     environment:
