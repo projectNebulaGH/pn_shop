@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 export const HomeLandingSection = () => {
@@ -58,10 +59,18 @@ export const HomeLandingSection = () => {
         </p>
       </div>
       <div className="absolute top-[50vh] text-center w-full" >
-        <button className="bg-transparent border-2 border-primary text-light-grey px-4 py-1 mx-4 rounded-md font-medium cursor-pointer">Products</button>
-        <button className="bg-transparent text-light-grey px-4 py-1 mx-4 rounded-md font-medium cursor-pointer">Paradigm</button>
-        <button className="bg-transparent text-light-grey px-4 py-1 mx-4 rounded-md font-medium cursor-pointer">Factory</button>
-        <button className="bg-transparent text-light-grey px-4 py-1 mx-4 rounded-md font-medium cursor-pointer">Products</button>
+        <Link href="ProductsPage">
+          <button className="bg-transparent border-2 border-primary text-primary px-4 py-1 rounded-md font-medium cursor-pointer">Products</button>
+        </Link>
+        <Link href="ParadigmsPage">
+          <button className="bgX-transparent text-light-grey px-4 py-1 mx-4 rounded-md font-medium cursor-pointer">Paradigms</button>
+        </Link>
+        <Link href="FactoryPage">
+          <button className="bg-transparent text-light-grey px-4 py-1 mx-4 rounded-md font-medium cursor-pointer">Factory</button>
+        </Link>
+        <Link href="ResearchPage">
+          <button className="bg-transparent text-light-grey px-4 py-1 mx-4 rounded-md font-medium cursor-pointer">Research</button>
+        </Link>
       </div>
       
     </div>
