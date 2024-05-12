@@ -1,4 +1,4 @@
-import { ProductsImplementationCarousel } from "./products-implementation-carousel"
+import ProductsImplementationCarousel from "./products-implementation-carousel"
 import { ProductsInventoryCarousel } from "./products-inventory-carousel"
 
 export const ProductsLandingSection = () => {
