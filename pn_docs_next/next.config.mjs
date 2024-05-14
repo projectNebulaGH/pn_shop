@@ -2,9 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   output: "export",
-  images: {
-    unoptimized: true,
-  },
+  basePath: "https://projectnebulagh.github.io/pn_shop/pn_docs_next",
+  'images.unoptimised' : true,
+
 };
 
 export default nextConfig;
