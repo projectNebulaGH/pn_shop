@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   output: "export",
-  basePath: "pn_shop/pn_docs_next"
+  basePath: "/pn_docs_next"
 
 
 };
