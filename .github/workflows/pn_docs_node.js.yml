@@ -58,7 +58,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: nextjs-build
-          path: .next
+          path: pn_docs_next/.next
 
   deploy:
     environment:
@@ -73,6 +73,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: nextjs-build
+          path: pn_docs_next/.next
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
