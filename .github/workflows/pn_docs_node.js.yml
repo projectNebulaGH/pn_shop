@@ -57,7 +57,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          path: pn_docs_next/.next
+          path: ./out
 
       - name: Some debugging
         run: |
@@ -73,11 +73,6 @@ jobs:
     
     steps:
 
-      - name: Some debugging
-        run: |
-          ls -a
-          pwd
-          
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
         with:
