@@ -37,8 +37,15 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
-          base_path: "/pn_shop/pn_docs_next"
+          generator_config_file: 'pn_docs_next/next.config.mjs'
           static_site_generator: next
+
+      - name: Dump Pages configuration
+        run: |
+          echo PAGES_BASE_URL:  ${{ steps.pages.outputs.base_url }}
+          echo PAGES_ORIGIN:    ${{ steps.pages.outputs.origin }}
+          echo PAGES_HOST:      ${{ steps.pages.outputs.host }}
+          echo PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}
 
       - name: Install dependencies
         run: yarn install
@@ -61,6 +68,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
         with:
-          publish_dir: pn_docs_next/.next
+          artifact_name: pn_docs_next/.next
         
         
