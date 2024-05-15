@@ -38,7 +38,7 @@ jobs:
         uses: actions/configure-pages@v5
         with:
           generator_config_file: 'pn_docs_next/next.config.mjs'
-          static_site_generator: next
+          # static_site_generator: next
 
       - name: Dump Pages configuration
         run: |
@@ -56,7 +56,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          path: pn_docs_next/.next
+          name: nextjs-build
+          path: pn_docs_next/out
 
   deploy:
     environment:
@@ -68,6 +69,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
         with:
-          artifact_name: pn_docs_next/.next
+          artifact_name: pn_docs_next/out/nextjs-build
         
         
