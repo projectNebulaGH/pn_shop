@@ -59,6 +59,11 @@ jobs:
         with:
           path: pn_docs_next/.next
 
+      - name: Some debugging
+        run: |
+          ls -a
+          pwd
+
   deploy:
     environment:
       name: github-pages
@@ -68,6 +73,11 @@ jobs:
     
     steps:
 
+      - name: Some debugging
+        run: |
+          ls -a
+          pwd
+          
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
         with:
