@@ -57,12 +57,13 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          path: ./out
+          path: pn_docs_next/out
 
       - name: Some debugging
         run: |
           ls -a
-          pwd
+          cd out
+          ls
 
   deploy:
     environment:
