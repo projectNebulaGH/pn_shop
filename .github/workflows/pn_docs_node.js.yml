@@ -61,6 +61,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
         with:
-          path: pn_docs_next/.next
+          publish_dir: pn_docs_next/.next
         
         
