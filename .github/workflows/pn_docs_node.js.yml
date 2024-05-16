@@ -18,7 +18,7 @@ concurrency:
 
 defaults:
   run:
-    working-directory: pn_docs_next
+    working-directory: pn_shop_next
 
 jobs:
   build:
@@ -31,15 +31,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "18"
-          cache: 'yarn'
-          cache-dependency-path: pn_docs_next
+          cache: 'npm'
+          cache-dependency-path: pn_shop_next
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
           token: ${{ github.token }}
           static_site_generator: 'next'
-          generator_config_file: 'pn_docs_next/next.config.mjs'
+          generator_config_file: 'pn_shop_next/next.config.mjs'
 
       - name: Dump Pages configuration
         run: |
@@ -49,16 +49,16 @@ jobs:
           echo PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}
 
       - name: Install dependencies
-        run: yarn install
+        run: npm install
 
       - name: Build with Next.js
-        run: yarn next build
+        run: npm next build
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: github-pages 
-          path: pn_docs_next/out
+          path: pn_shop_next/out
 
       - name: Some debugging
         run: |
@@ -69,7 +69,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: "https://projectnebulagh.github.io/pn_shop/pn_docs_next"
+      url: "https://projectnebulagh.github.io/pn_shop/pn_shop_next"
     runs-on: ubuntu-latest
     needs: build
     
