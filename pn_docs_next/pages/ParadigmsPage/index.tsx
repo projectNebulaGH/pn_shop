@@ -1,4 +1,3 @@
-import { HomeLandingSection } from '@/features/HomePage/home-landing-section';
 import { ParadigmsLandingSection } from '@/features/ParadigmsPage/paradigms-landing-section';
 import Head from 'next/head';
 
