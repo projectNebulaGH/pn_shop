@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 export const HomeLandingSection = () => {
@@ -64,15 +63,15 @@ export const HomeLandingSection = () => {
         <a href="ProductsPage">
           <button className="bg-transparent border-2 border-primary text-primary px-4 py-1 rounded-md font-medium cursor-pointer">Products</button>
         </a>
-        {/* <Link href="ParadigmsPage">
+        <a href="ParadigmsPage">
           <button className="bgX-transparent text-light-grey px-4 py-1 mx-4 rounded-md font-medium cursor-pointer">Paradigms</button>
-        </Link>
-        <Link href="FactoryPage">
+        </a>
+        <a href="FactoryPage">
           <button className="bg-transparent text-light-grey px-4 py-1 mx-4 rounded-md font-medium cursor-pointer">Factory</button>
-        </Link>
-        <Link href="ResearchPage">
+        </a>
+        <a href="ResearchPage">
           <button className="bg-transparent text-light-grey px-4 py-1 mx-4 rounded-md font-medium cursor-pointer">Research</button>
-        </Link> */}
+        </a>
       </div>
       
     </div>
