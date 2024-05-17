@@ -1,3 +1,5 @@
+'use client'
+
 import Head from "next/head";
 import { HomeLandingSection } from "@/app/HomePage/home-landing-section";
 
