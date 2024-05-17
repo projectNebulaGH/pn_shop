@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { HomeLandingSection } from "@/app/HomePage/home-landing-section";
 
 const HomePage = () => {
     return (
@@ -7,7 +8,7 @@ const HomePage = () => {
           <title>{"pn shop"}</title>
         </Head>
         <div>
-          {"Home Page"}
+          <HomeLandingSection />
         </div>
       </>
     );
