@@ -1,12 +1,12 @@
 'use client'
 
+import { ResearchLandingSection } from "./research-landing-section";
+
 const ResearchPage = () => {
   return (
-    <>
-      <div>
-        {"Research Page"}
-      </div>
-    </>
+    <div>
+      <ResearchLandingSection />
+    </div>
   );
 };
 

@@ -1,11 +1,13 @@
 'use client'
 
+import { ProductsLandingSection } from "@/app/ProductsPage/products-landing-section";
+
 const ProductsPage = () => {
   return (
     <>
       
       <div>
-        {"Products Page"}
+        <ProductsLandingSection />
       </div>
     </>
   );
