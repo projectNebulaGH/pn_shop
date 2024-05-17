@@ -2,6 +2,7 @@
 
 const nextConfig = {
     output: "export",
+    basePath: "/pn_shop_next",
     images: {
       unoptimized: true
     }
