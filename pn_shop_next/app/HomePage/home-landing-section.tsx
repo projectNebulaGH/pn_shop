@@ -64,7 +64,7 @@ export const HomeLandingSection = () => {
           <button className="bg-transparent border-2 border-primary text-primary px-4 py-1 rounded-md font-medium cursor-pointer">Products</button>
         </a>
         <a href="ParadigmsPage">
-          <button className="bgX-transparent text-light-grey px-4 py-1 mx-4 rounded-md font-medium cursor-pointer">Paradigms</button>
+          <button className="bg-transparent text-light-grey px-4 py-1 mx-4 rounded-md font-medium cursor-pointer">Paradigms</button>
         </a>
         <a href="FactoryPage">
           <button className="bg-transparent text-light-grey px-4 py-1 mx-4 rounded-md font-medium cursor-pointer">Factory</button>

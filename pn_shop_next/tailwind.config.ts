@@ -12,7 +12,7 @@ const config: Config = {
         'primary': '#00F2B8',
         'secondary': '#009BF2',
         'base-color': '#000C12',
-        'base-color-alt': '#0B282D',
+        'base-color-alt': '#0A0A0E',
         'light-grey': '#EAF5F2',
       },
       backgroundImage: {
