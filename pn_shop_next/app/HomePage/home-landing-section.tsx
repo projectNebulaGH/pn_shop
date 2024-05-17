@@ -61,9 +61,9 @@ export const HomeLandingSection = () => {
         </p>
       </div>
       <div className="absolute top-[50vh] text-center w-full" >
-        <Link href="/ProductsPage">
+        <a href="ProductsPage">
           <button className="bg-transparent border-2 border-primary text-primary px-4 py-1 rounded-md font-medium cursor-pointer">Products</button>
-        </Link>
+        </a>
         {/* <Link href="ParadigmsPage">
           <button className="bgX-transparent text-light-grey px-4 py-1 mx-4 rounded-md font-medium cursor-pointer">Paradigms</button>
         </Link>
