@@ -1,0 +1,6 @@
+[
+    { "id": 1, "name": "Docker" },
+    { "id": 2, "name": "AWS EKS" },
+    { "id": 3, "name": "MiniKube" },
+    { "id": 4, "name": "Github Org" }
+]
