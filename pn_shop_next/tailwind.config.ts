@@ -20,12 +20,12 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         // nb- Adding custom background gradient for Neumorphism
-        "neumorphic-gradient": "linear-gradient(95.49deg, #101018 4.87%, #181821 40.03%, #101017 43.06%, #0D0D13 94.32%)",
+        "neumorphic-gradient": "linear-gradient(95.49deg, #101018 0.0%, #101017 10.0%, #101018 35.03%, #101017 50.06%, #0D0D13 100.0%)",
         "base-gradient": "linear-gradient(106.95deg, #0D0D12 0.07%, #101017 44.24%, #181820 63.26%, #0E0E14 76.6%, #0E0E14 99.3%)",
       },
       // nb- Adding custom box shadows for Neumorphism
       boxShadow: {
-        'neumorphic-light': '0px 4px 4px rgba(0, 0, 0, 0.25), -4px -4px 5.3px #1E1E2B', // nb- Default shadow for Neumorphic effect
+        'neumorphic-light': '6px 6px 5px #101018, -3px -3px 5px #101017', // nb- Default shadow for Neumorphic effect
         'neumorphic-hover': '0px 4px 4px rgba(0, 0, 0, 0.20), -4px -4px 5.3px #1A1A26', // nb- Shadow for hover state
         'neumorphic-active': 'inset 0px 4px 4px rgba(0, 0, 0, 0.25), inset -4px -4px 5.3px #1E1E2B', // nb- Shadow for active state
       },

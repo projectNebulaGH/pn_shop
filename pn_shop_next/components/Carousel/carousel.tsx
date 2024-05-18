@@ -29,9 +29,10 @@ export const Carousel: React.FC<CarouselFramesProps> = ({ frames }) => {
 
     return (
         <div className='flex flex-row items-center'>
+            
             <button 
                 onClick={scrollLeft} 
-                className="hidden md:block bg-base-color  text-light-grey px-4 py-1 mx-2 text-4xl h-[6vh] w-[6vh] rounded-md font-bold cursor-pointer">
+                className="hidden md:block bg-transparent hover:border-2 hover:border-secondary text-light-grey px-4 py-1 mx-2 text-4xl h-[6vh] w-[6vh] rounded-md font-bold cursor-pointer">
                 {"<"}
             </button>
         
@@ -45,7 +46,7 @@ export const Carousel: React.FC<CarouselFramesProps> = ({ frames }) => {
 
             <button 
                 onClick={scrollRight} 
-                className="hidden md:block bg-base-color  text-light-grey px-4 py-1 mx-2 h-[6vh] w-[6vh] rounded-md text-4xl font-bold cursor-pointer">
+                className="hidden md:block bg-transparent hover:border-2 hover:border-secondary text-light-grey px-4 py-1 mx-2 h-[6vh] w-[6vh] rounded-md text-4xl font-bold cursor-pointer">
                 {">"}
             </button>
 

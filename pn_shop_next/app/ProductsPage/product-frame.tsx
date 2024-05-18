@@ -22,10 +22,10 @@ export const ProductFrame = ({ name }: ProductFrameProps) => {
         <div>
             <button
                 className="
-                bg-neumorphic-gradient text-light-grey px-4 py-1 mx-2 
-                min-h-[8vh] w-[12vh] rounded-neumorphic font-medium 
+                bg-neumorphic-gradient text-light-grey px-4 
+                min-h-[10vh] w-[15vh] md:min-h-[15vh] md:w-[20vh] rounded-neumorphic font-medium 
                 cursor-pointer shadow-neumorphic-light
-                hover:shadow-neumorphic-hover
+                hover:shadow-neumorphic-hover hover:border-2 hover:border-primary
                 active:shadow-neumorphic-active
                 transition-shadow duration-200 ease-in-out
             "

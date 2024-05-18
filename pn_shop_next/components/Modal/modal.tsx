@@ -20,7 +20,7 @@ const Modal: React.FC<ModalProps> = ({ closed, component }: ModalProps) => {
                 closed(true);
               }}
             >
-              <p className="text-light-grey text-4xl pt-[2vh] pb-[2vh] font-bold">{"X"}</p>
+              <p className="text-light-grey text-3xl pt-[2vh] pb-[2vh] font-bold">{"X"}</p>
             </div>
             <div className="min-w-[40vw] min-h-[30vh] p-[2vw]">
               {component}
