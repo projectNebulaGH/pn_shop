@@ -3,6 +3,7 @@
 import { Carousel } from "@/components/Carousel/carousel"
 import { ProductFrame } from "@/app/ProductsPage/product-frame";
 import implementationList from "@/data/products-implementation-list.json";
+import inventoryList from "@/data/products-inventory-list.json";
 
 export const ProductsLandingSection = () => {
 
@@ -21,6 +22,7 @@ export const ProductsLandingSection = () => {
             <div className="flex flex-col min-w-[90vw] min-h-[20vh] mt-[2vh] bg-base-color-alt">
                 <div className="px-[5vw]">
                     <p className="text-light-grey text-lg pt-[2vh] font-bold">Inventory</p>
+                    <Carousel frames={inventoryList.map((item) => <ProductFrame key={item.id} name={item.name} />)} />
                 </div>
             </div>
         </div>
