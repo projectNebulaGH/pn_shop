@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply dark:bg-base-color bg-base-color;
+    @apply dark:bg-base-gradient bg-base-color; /* Apply gradient for dark mode and solid color for light mode */
   }
 }
 

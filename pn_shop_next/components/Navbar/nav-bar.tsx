@@ -57,16 +57,16 @@ const Navbar: React.FC = () => {
       <div className="lg:hidden">
         <button onClick={toggleMenu}>
           {showMenu ? (
-            <img src="@/public/next.svg" alt="Close Menu" width={30} height={30} />
+            <img src="/next.svg" alt="Close Menu" width={30} height={30} />
           ) : (
-            <img src="" alt="@/public/next.svg" width={30} height={30} />
+            <img src="/next.svg" alt="Menu" width={30} height={30} />
           )}
         </button>
         {showMenu && (
           <div className="absolute top-0 right-0 h-full w-[90vw] bg-base-color text-white z-10 shadow-lg">
             <div className="flex justify-end p-4">
               <button onClick={toggleMenu}>
-                <img src="@/public/next.svg" alt="Close Menu" width={24} height={24} />
+                <img src="/next.svg" alt="Close Menu" width={24} height={24} />
               </button>
             </div>
           </div>
