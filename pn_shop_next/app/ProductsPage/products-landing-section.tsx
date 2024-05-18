@@ -2,10 +2,9 @@
 
 import { Carousel } from "@/components/Carousel/carousel"
 import { ProductFrame } from "@/app/ProductsPage/product-frame";
+import implementationList from "@/data/products-implementation-list.json";
 
 export const ProductsLandingSection = () => {
-
-    const productNames = ["FrameX", "Frame1", "Frame3"];
 
     return (
         <div className="w-screen h-screen flex flex-col relative my-[5vh]">
@@ -16,7 +15,7 @@ export const ProductsLandingSection = () => {
             <div className="flex flex-col min-w-[90vw] min-h-[20vh] bg-base-color-alt">
                 <div className="px-[5vw]">
                     <p className="text-light-grey text-lg pt-[2vh] font-bold">Implementations</p>
-                    <Carousel frames={productNames.map((name) => <ProductFrame key={name} name={name} />)} />
+                    <Carousel frames={implementationList.map((item) => <ProductFrame key={item.id} name={item.name} />)} />
                 </div>
             </div>
             <div className="flex flex-col min-w-[90vw] min-h-[20vh] mt-[2vh] bg-base-color-alt">
