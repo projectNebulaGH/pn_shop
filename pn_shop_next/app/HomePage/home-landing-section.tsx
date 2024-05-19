@@ -53,7 +53,7 @@ export const HomeLandingSection = () => {
 
   return (
     <div className="w-screen h-screen flex items-center justify-center relative">
-      <div className="absolute top-[20vh] text-center w-full z-10">
+      <div className="absolute top-[20vh] text-center w-full">
         <p className="text-primary text-4xl md:text-6xl">project_nebula</p>
         <p className="text-light-grey text-xl md:text-3xl font-thin py-[2vh]">
           {welcomeText}

@@ -35,14 +35,13 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <div className="flex items-center border-b-2 border-primary justify-between bg-base-color h-16 px-[5vw] lg:px-[5vw] relative">
-      {/* Left side - Logo and Brand */}
+    <div className="flex items-center border-b-2 border-primary justify-between bg-base-color h-16 px-[5vw] lg:px-[5vw] z-20">
       <div className="flex items-center space-x-4 flex-shrink-0">
-        {/* <Link href="/">
+        <a href="/">
           <div>
-            <Image src="/assets/logos/cats_eye.png" alt="Cat's Eye Logo" width={30} height={30} />
+            <img src="logos/coverImage.png" alt="Cat's Eye Logo" width={30} height={30} />
           </div>
-        </Link> */}
+        </a>
         <a href="HomePage">
           <p className="text-lg font-bold text-white cursor-pointer">project <span className="text-primary text-lg font-bold">nebula</span></p>
         </a>
@@ -57,16 +56,16 @@ const Navbar: React.FC = () => {
       <div className="lg:hidden">
         <button onClick={toggleMenu}>
           {showMenu ? (
-            <img src="/next.svg" alt="Close Menu" width={30} height={30} />
+            <img src="logos/closemenu.svg" alt="Close Menu" width={30} height={30} />
           ) : (
-            <img src="/next.svg" alt="Menu" width={30} height={30} />
+            <img src="logos/hamburgermenu.svg" alt="Menu" width={30} height={30} />
           )}
         </button>
         {showMenu && (
-          <div className="absolute top-0 right-0 h-full w-[90vw] bg-base-color text-white z-10 shadow-lg">
+          <div className="absolute top-0 right-0 h-full w-[80vw] bg-base-color/50 backdrop-blur-xl text-white z-20">
             <div className="flex justify-end p-4">
               <button onClick={toggleMenu}>
-                <img src="/next.svg" alt="Close Menu" width={24} height={24} />
+                <img src="logos/closemenu.svg" alt="Close Menu" width={24} height={24} />
               </button>
             </div>
           </div>
