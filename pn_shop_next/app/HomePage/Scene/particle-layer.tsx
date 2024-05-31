@@ -93,12 +93,12 @@ export const ParticleLayer = () => {
 
             // Update objects
             sphere.rotation.y = 0.2 * elapsedTime
-            particlesMesh.rotation.y = -0.03 * elapsedTime
+            particlesMesh.rotation.y = -0.02 * elapsedTime
             particlesMesh.rotation.x = -0.02 * elapsedTime
             
             if(mouseX > 0) {
-                particlesMesh.rotation.x = -mouseY * (elapsedTime * 0.00006)
-                particlesMesh.rotation.x = -mouseX * (elapsedTime * 0.00006)
+                particlesMesh.rotation.x = -mouseY * (elapsedTime * 0.00002)
+                particlesMesh.rotation.y = -mouseX * (elapsedTime * 0.00002)
             }
 
             // Update Orbital Controls
