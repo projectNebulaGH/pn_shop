@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react';
+import { ParticleLayer } from './Scene/particle-layer';
 
 export const HomeLandingSection = () => {
   const [welcomeText, setWelcomeText] = useState('bienvenue?');
@@ -52,28 +53,32 @@ export const HomeLandingSection = () => {
   }, [animationPlayed]);
 
   return (
-    <div className="w-screen h-screen flex items-center justify-center relative">
-      <div className="absolute top-[20vh] text-center w-full">
-        <p className="text-primary text-4xl md:text-6xl">project_nebula</p>
-        <p className="text-light-grey text-xl md:text-3xl font-thin py-[2vh]">
-          {welcomeText}
-        </p>
+    <div className="relative w-screen h-screen flex flex-col items-center justify-center">
+      <div className="absolute inset-0 -z-10">
+        <ParticleLayer  />
       </div>
-      <div className="absolute top-[50vh] text-center w-full" >
-        <a href="ProductsPage">
-          <button className="bg-transparent border-2 border-primary text-primary px-4 py-1 rounded-md font-medium cursor-pointer">Products</button>
-        </a>
-        <a href="ParadigmsPage">
-          <button className="bg-transparent text-light-grey px-4 py-1 mx-4 rounded-md font-medium cursor-pointer">Paradigms</button>
-        </a>
-        <a href="FactoryPage">
-          <button className="bg-transparent text-light-grey px-4 py-1 mx-4 rounded-md font-medium cursor-pointer">Factory</button>
-        </a>
-        <a href="ResearchPage">
-          <button className="bg-transparent text-light-grey px-4 py-1 mx-4 rounded-md font-medium cursor-pointer">Research</button>
-        </a>
+      <div className="flex flex-col items-center justify-center">
+        <div className="text-center">
+          <p className="text-primary text-4xl md:text-6xl">project_nebula</p>
+          <p className="text-light-grey text-xl md:text-3xl font-thin py-4">
+            {welcomeText}
+          </p>
+        </div>
+        <div className="flex flex-col mt-[10vh]">
+          <a href="ProductsPage">
+            <button className="w-[50vw] md:w-[30vw] bg-transparent border-2 border-primary text-primary px-4 py-1 my-1 rounded-md font-medium cursor-pointer">Products</button>
+          </a>
+          <a href="ParadigmsPage">
+            <button className="w-[50vw] md:w-[30vw] bg-transparent text-light-grey px-4 py-1 my-1 rounded-md font-medium cursor-pointer">Paradigms</button>
+          </a>
+          <a href="FactoryPage">
+            <button className="w-[50vw] md:w-[30vw] bg-transparent text-light-grey px-4 py-1 my-1 rounded-md font-medium cursor-pointer">Factory</button>
+          </a>
+          <a href="ResearchPage">
+            <button className="w-[50vw] md:w-[30vw] bg-transparent text-light-grey px-4 py-1 my-1 rounded-md font-medium cursor-pointer">Research</button>
+          </a>
+        </div>
       </div>
-      
     </div>
   );
 };

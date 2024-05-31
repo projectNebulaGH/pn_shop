@@ -35,11 +35,11 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <div className="flex items-center border-b-2 border-primary justify-between bg-base-color h-16 px-[5vw] lg:px-[5vw] z-20">
+    <div className="flex items-center border-b-2 border-primary justify-between bg-base-color/20 h-16 px-[5vw] lg:px-[5vw] z-20">
       <div className="flex items-center space-x-4 flex-shrink-0">
         <a href="/">
           <div>
-            <img src="logos/coverImage.png" alt="Cat's Eye Logo" width={30} height={30} />
+            <img src="logos/pn_logo.png" alt="Cat's Eye Logo" width={30} height={30} />
           </div>
         </a>
         <a href="HomePage">
