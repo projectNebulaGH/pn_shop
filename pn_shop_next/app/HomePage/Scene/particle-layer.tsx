@@ -21,7 +21,7 @@ export const ParticleLayer = () => {
         // Objects
         const geometry = new THREE.TorusGeometry(1.2, 0.2, 30, 100)
         const particlesGeometry = new THREE.BufferGeometry;
-        const particleCount = 5000;
+        const particleCount = 3000;
 
         const posArray = new Float32Array(particleCount * 3)
 
@@ -32,13 +32,13 @@ export const ParticleLayer = () => {
         // Materials
         const material = new THREE.PointsMaterial({
             size: 0.005,
-            color: '#0A1D5F',
+            color: '#8F00FF',
         })
 
         const particlesMaterial = new THREE.PointsMaterial({
             size: 0.005,
             transparent: true,
-            color: '#032866',
+            color: '#006EAC',
         })
 
         particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
